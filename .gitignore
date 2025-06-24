@@ -5,6 +5,11 @@
 # follows official upstream conventions:
 # https://www.drupal.org/docs/develop/using-composer
 
+#Lando and tooling artifacts
+.lando.local.yml
+*.sql
+*.sql.gz
+
 # Ignore configuration files that may contain sensitive information
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
@@ -15,6 +20,9 @@
 /web/sites/*/private
 /web/sites/*/files-public
 /web/sites/*/files-private
+
+#Ignore simpleTest multi-site evironment.
+sites/simpletest
 
 # Ignore paths that may contain temporary files
 /web/sites/*/translations
