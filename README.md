@@ -35,8 +35,8 @@ Drush & Composer
 🗂️ Directory Structure
     
     web/sites/main/
-    web/sites/news/
-    web/sites/data/
+    web/sites/vertical1/
+    web/sites/vertical2/
 
   Shared modules/themes live in web/modules/custom, web/themes/custom
 
