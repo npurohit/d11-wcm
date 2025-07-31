@@ -1,6 +1,4 @@
 
----
-# 📘 Federal Government Center for Medicare & Medicaid Services(CMS) | EPS Drupal 11 Multisite Web Content Management Project
 
 > Drupal 11 multisite project template for EPS different vericals, using Lando and Composer.
 
