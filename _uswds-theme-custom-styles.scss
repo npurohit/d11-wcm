@@ -1,0 +1,93 @@
+}
+
+/* Custom style for views block to display full contents and include back button */
+/* Loading animation for the spinner icon */
+.loading-spinner {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* USWDS 3.0 button icon spacing - icons are now inline */
+.usa-button .usa-icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  margin-top: -0.125rem; /* Slight adjustment for optical alignment */
+}
+
+/* Back button hover enhancement */
+.back-to-view {
+  transition: all 0.15s ease-in-out;
+}
+
+.back-to-view:hover .usa-icon {
+  transform: translateX(-0.25rem);
+  transition: transform 0.15s ease-in-out;
+}
+
+/* Smooth content transitions */
+.view-content {
+  transition: opacity 0.15s ease-in-out;
+}
+
+/* Node wrapper spacing */
+.view-block-node-wrapper {
+  padding-block-start: 1rem; /* USWDS 3.0 uses logical properties */
+}
+
+/* Hide unnecessary elements in block context */
+.view-block-node-wrapper .breadcrumb,
+.view-block-node-wrapper .usa-breadcrumb,
+.view-block-node-wrapper .tabs,
+.view-block-node-wrapper .region-sidebar-first,
+.view-block-node-wrapper .region-sidebar-second,
+.view-block-node-wrapper > .usa-skipnav {
+  display: none;
+}
+
+/* Ensure proper spacing for USWDS prose */
+.view-block-node-wrapper.usa-prose > :first-child {
+  margin-block-start: 0; /* USWDS 3.0 logical property */
+}
+
+/* Focus management for accessibility - USWDS 3.0 standards */
+.back-to-view:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0.25rem;
+}
+
+/* USWDS 3.0 uses different focus-visible approach */
+.back-to-view:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.back-to-view:focus-visible {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0.25rem;
+}
+
+/* Responsive adjustments using USWDS 3.0 breakpoints */
+@media (max-width: 39.99em) { /* mobile-lg breakpoint */
+  .view-block-back {
+    margin-block-end: 1.5rem !important;
+  }
+  
+  .back-to-view {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Alert body spacing - USWDS 3.0 update */
+.usa-alert--slim .usa-alert__body {
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+}
+/* End custom style for view alert block */
