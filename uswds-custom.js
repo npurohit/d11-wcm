@@ -1,3 +1,4 @@
+/* View block navigation custom js for alert */
 (function ($, Drupal, drupalSettings) {
   'use strict';
 
@@ -149,3 +150,4 @@
   };
 
 })(jQuery, Drupal, drupalSettings);
+/* end custom js for views block navigation for alert view */
