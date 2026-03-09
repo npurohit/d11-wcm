@@ -1,0 +1,53 @@
+name: cms-wcm
+recipe: drupal11
+config:
+  webroot: web
+proxy: 
+  appserver:  # custom local-host urls 
+    - "cms-wcm.lndo.site"
+ # mailhog:
+ #   - mailhog
+services:
+  #mailhog:
+  #  type: mailhog
+  #  portforward: true
+  #  hogfrom: 
+  #    - appserver
+  appserver:
+    type: php:8.3
+    env_file:
+      - .env # Loads variables from the .env file in the project root 
+  pma:
+    type: phpmyadmin
+  database: 
+    type: mysql:8.0
+    healthcheck:
+      test: ["CMD-SHELL", "EXIT 0"]   #temporary removing health-check
+     env_file:
+      - .env # Loads variables from the .env file in the project root 
+    portforward: false
+    #creds: 
+    #  database: DB_NAME
+    #  user: DB_USER
+    #  password: DB_PASSWORD
+  node:
+    type: node:22
+    globals:
+      gulp-cli: latest
+    build:
+      - cd web/themes/custom/custom_subtheme && npm install -g gulp-cli
+      - cd web/themes/custom/custom_subtheme && npm install
+    working_dir: /app/web/themes/custom/custom-subtheme
+    command: npm start
+
+tooling:
+  node:
+    service: node
+  npm:
+    service: node
+  gulp:
+    service: node
+
+
+
+    
